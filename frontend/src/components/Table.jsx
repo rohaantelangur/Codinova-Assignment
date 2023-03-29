@@ -118,13 +118,13 @@ function Table(props) {
           <img src={item.url || "btc.png"} alt={item.exchange_id} />
           {item.exchange_id}
         </div>
-        <div className="table-td">{numberToString(item.volume_1mth_usd)}</div>
+        <div className="table-td">{numberToString(item?.volume_1day_usd)}</div>
       </div>
     ));
   };
 
   const numberToString = (num) => {
-    const suffixes = ["million", "billion"];
+    const suffixes = ["million", "billion","tillion"];
     let suffixIndex = 0;
     while (num >= 1000000 && suffixIndex < suffixes.length) {
       num /= 1000000;
@@ -133,7 +133,9 @@ function Table(props) {
     if (suffixIndex > 0) {
       return `$${num.toFixed(2)} ${suffixes[suffixIndex - 1]}`;
     } else {
+      console.log(num);
       return `$${num.toFixed(2)}`;
+      // return `$${num}`;
     }
   };
 

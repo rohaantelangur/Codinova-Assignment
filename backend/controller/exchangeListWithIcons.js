@@ -31,11 +31,11 @@ const exchangeListWithIcons = asyncHandler(async (req, res) => {
           name: 1,
           url: 1,
           website: 1,
-          volume_1mth_usd: 1,
+          volume_1day_usd: 1,
         },
       },
       {
-        $sort: { volume_1mth_usd: order == "asc" ? 1 : -1 },
+        $sort: { volume_1day_usd: order == "asc" ? 1 : -1 },
       },
       {
         $skip: skip,
