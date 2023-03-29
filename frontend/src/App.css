@@ -1,38 +1,134 @@
-.App {
-  text-align: center;
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.headline{
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-direction: column;
+  text-align: center;
+  gap:10px;
+  margin-bottom: 10px;
+}
+.headline p:first-child{
+  color: #092B5E;
+  font-size: 20px;
+  font-weight: 700;
+}
+.headline p:last-child{
+  color: #9AACC7;
+  font-size: 15px;
+  font-weight: 600;
+}
+.exchanges{
+  text-align: center;
+  width: 100%;
+  border-bottom: 1px solid #dadada;
+  display: flex;
+  justify-content: center;
+}
+.exchanges p{
+  width: fit-content;
+  color: #196FFF;
+  border-bottom: 3px solid #196FFF;
+}
+.search-bar{
+  margin: 40px auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 15px;
+  align-items: center;
+  width: 450px;
+  border: 1px solid #dadada;
+  border-radius: 20px;
+  height: 40px;
+}
+.search-bar img{
+  width: 35px;
+  height: 35px;
+}
+.search-bar input{
+  width: 80%;
+  height: 90%;
+  border: none;
+  outline: none;
+  font-size: 20px;
+}
+.page-size{
+  display: flex;
+  justify-content: flex-end;
+}
+.table{
+  width: 100%;
+  margin: auto;
+}
+td{
+  padding: 15px;
+  border-bottom: 1px solid #dadada;
+
+}
+th{
+  color: #37537C;
+  border-bottom: 1px solid #dadada;
+}
+table{
+  width: 100%;
+  border-collapse: collapse;
+}
+.table-td{
+  width:auto;
+  margin-left: 44%;
+  color: #37537C;
+  font-weight: 600;
+  gap: 5px;
+  display: flex;
+  align-items: center;
+}
+.table-td1{
+  width:auto;
+  margin-left: 43%;
+  color: #37537C;
+  font-weight: 600;
+  gap: 5px;
+  display: flex;
+  align-items: center;
+}
+.pagination{
+  display: flex;
+  justify-content: center;
+  margin: 10px 0px;
+}
+.pagination button{
+  padding: 5px 10px;
+  margin: 5px;
+  border: none;
+}
+img{
+  height: 20px;
+  width: 20px;
+}
+.active-button{
+ background-color: #002358;
+ border: none;
+ color: white;
+}
+.disable-button{
+background-color: #FFFFFF;
+color: #002358;
+border: none;
+
+}
+.next-disable-button{
+  background-color: white;
+  border: 1px solid #002358 !important;
+  color: #002358;
+  border-radius: 20px;
+}
+.next-active-button{
+  background-color: #126BFF;
   color: white;
-}
+  border-radius: 20px;
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
