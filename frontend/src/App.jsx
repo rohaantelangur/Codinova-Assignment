@@ -7,17 +7,17 @@ import { fetchCryto } from "./Redux/cryptoSlice";
 
 const App = () => {
   const crypto = useSelector((state)=>state)
-  const Dispatch = useDispatch()
-  
+  const Dispatch = useDispatch();
+  console.log(crypto);
   
   useEffect(() => {
-  Dispatch(fetchCryto())
+  Dispatch(fetchCryto({}))
   }, [])
 
   return (
     <>
       <Header />
-      <Table data={crypto.data} />
+      <Table data={crypto.data} isLoading={crypto.loading} isError={crypto.error}/>
     </>
   );
 }

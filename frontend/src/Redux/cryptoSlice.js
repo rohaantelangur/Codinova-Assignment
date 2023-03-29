@@ -1,5 +1,3 @@
-import { useDispatch } from "react-redux";
-
 const { createSlice, createAsyncThunk } = require("@reduxjs/toolkit");
 
 const crytoSlice = createSlice({
@@ -46,8 +44,8 @@ const crytoSlice = createSlice({
 export default crytoSlice.reducer;
 
 // Fetch all data
-export const fetchCryto = createAsyncThunk("crypto/fetch", async (url) => {
-  const res = await fetch("http://localhost:8080/v1/exchange-list?page=1&limit=50&exchange_id=btc&order=asc");
+export const fetchCryto = createAsyncThunk("crypto/fetch", async ({page,limit,oredr,exchange_id}) => {
+  const res = await fetch(`http://localhost:8080/v1/exchange-list?page=${page || 1}&limit=${limit||10}&exchange_id=${exchange_id || ""}&order=${oredr||"desc"}`);
   const data = await res.json();
   return data.data;
 });
